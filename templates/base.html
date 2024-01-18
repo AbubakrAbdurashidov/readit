@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Readit - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script nonce="eb6a1594-9ebc-4f90-aaa0-ca6d9bb59b87">(function (w, d) {
+        !function (dp, dq, dr, ds) {
+            dp[dr] = dp[dr] || {};
+            dp[dr].executed = [];
+            dp.zaraz = {deferred: [], listeners: []};
+            dp.zaraz.q = [];
+            dp.zaraz._f = function (dt) {
+                return async function () {
+                    var du = Array.prototype.slice.call(arguments);
+                    dp.zaraz.q.push({m: dt, a: du})
+                }
+            };
+            for (const dv of ["track", "set", "debug"]) dp.zaraz[dv] = dp.zaraz._f(dv);
+            dp.zaraz.init = () => {
+                var dw = dq.getElementsByTagName(ds)[0], dx = dq.createElement(ds),
+                    dy = dq.getElementsByTagName("title")[0];
+                dy && (dp[dr].t = dq.getElementsByTagName("title")[0].text);
+                dp[dr].x = Math.random();
+                dp[dr].w = dp.screen.width;
+                dp[dr].h = dp.screen.height;
+                dp[dr].j = dp.innerHeight;
+                dp[dr].e = dp.innerWidth;
+                dp[dr].l = dp.location.href;
+                dp[dr].r = dq.referrer;
+                dp[dr].k = dp.screen.colorDepth;
+                dp[dr].n = dq.characterSet;
+                dp[dr].o = (new Date).getTimezoneOffset();
+                if (dp.dataLayer) for (const dC of Object.entries(Object.entries(dataLayer).reduce(((dD, dE) => ({...dD[1], ...dE[1]})), {}))) zaraz.set(dC[0], dC[1], {scope: "page"});
+                dp[dr].q = [];
+                for (; dp.zaraz.q.length;) {
+                    const dF = dp.zaraz.q.shift();
+                    dp[dr].q.push(dF)
+                }
+                dx.defer = !0;
+                for (const dG of [localStorage, sessionStorage]) Object.keys(dG || {}).filter((dI => dI.startsWith("_zaraz_"))).forEach((dH => {
+                    try {
+                        dp[dr]["z_" + dH.slice(7)] = JSON.parse(dG.getItem(dH))
+                    } catch {
+                        dp[dr]["z_" + dH.slice(7)] = dG.getItem(dH)
+                    }
+                }));
+                dx.referrerPolicy = "origin";
+                dx.src = "https://preview.colorlib.com/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(dp[dr])));
+                dw.parentNode.insertBefore(dx, dw)
+            };
+            ["complete", "interactive"].includes(dq.readyState) ? zaraz.init() : dp.addEventListener("DOMContentLoaded", zaraz.init)
+        }(w, d, "zarazData", "script");
+    })(window, document);</script>
+</head>
+<body>
+
+
+
+{% include 'navbar.html' %}
+
+
+{% block content %}
+
+{% endblock %}
+
+
+{% include 'loader.html' %}
+
+{% include 'footer.html' %}
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
+<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+<script src="{% static 'js/scrollax.min.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&amp;sensor=false"></script>
+<script src="{% static 'js/google-map.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+{% block js %}
+
+{% endblock %}
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+        integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+        data-cf-beacon='{"rayId":"842dce7ded142107","b":1,"version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url({% static 'images/bg_1.jpg' %});"
+         data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+            <div class="col-md-9 ftco-animate pb-5 text-center">
+                <h1 class="mb-3 bread">Contact us</h1>
+                <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'main:home' %}">Home <i
+                        class="ion-ios-arrow-forward"></i></a></span> <span>About <i class="ion-ios-arrow-forward"></i></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if messages %}
+    <div id="django-messages" class="">
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <div class="message-success">{{ message }}</div>
+            {% elif message.tags == 'error' %}
+                <div class="message-danger">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+<section class="ftco-section contact-section">
+    <div class="container">
+        <div class="row d-flex mb-5 contact-info">
+            <div class="col-md-12 mb-4">
+                <h2 class="h3">Contact Information</h2>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-md-3">
+                <p><span>Address:</span> 198 West 21th Street, Suite 721 New York NY 10016</p>
+            </div>
+            <div class="col-md-3">
+                <p><span>Phone:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+            </div>
+            <div class="col-md-3">
+                <p><span>Email:</span> <a
+                        href="https://preview.colorlib.com/cdn-cgi/l/email-protection#70191e161f30091f0502031904155e131f1d"><span
+                        class="__cf_email__"
+                        data-cfemail="036a6d656c437a6c7671706a77662d606c6e">[email&#160;protected]</span></a></p>
+            </div>
+            <div class="col-md-3">
+                <p><span>Website</span> <a href="#">yoursite.com</a></p>
+            </div>
+        </div>
+        <div class="row block-9 no-gutters">
+            <div class="col-lg-6 order-md-last d-flex">
+                <form method="post" class="bg-light p-4 p-md-5 contact-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.name }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.email }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.subject }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.message }}
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 d-flex">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d846.4926370957169!2d69.28726075145367!3d41.355511300261014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef3874b503727%3A0x87d7b3568c7badc8!2sFarobiy%20IT%20Academy!5e0!3m2!1sen!2s!4v1705417674536!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+
+{% block js %}
+<script>
+    $(document).ready(function () {
+      setTimeout(function () {
+        $('#django-messages').addClass('hide');
+      }, 3000);
+    });
+</script>
+{% endblock %}
